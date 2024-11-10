@@ -1,54 +1,120 @@
-*{
+* {
   margin: 0;
-  font-family: Arial,sans-serif;
+  font-family: Arial, sans-serif;
 }
-body{
+
+:root {
+  --background-dark: hsl(220, 15%, 20%);
+  --text-dark: beige;
+  --background-light: beige;
+  --text-light: hsl(220, 15%, 20%);
+  --button-light: hsl(60, 56%, 60%);
+  --button-dark: hsl(220, 15%, 40%);
+  --background-defalut: hsl(220, 15%, 20%);
+  --text-default: beige;
+  --button-default: hsl(220, 15%, 30%);
+  --button-fill: beige;
+}
+.light-mode {
+  --background-defalut: beige;
+  --text-default: hsl(220, 15%, 20%);
+  --button-default: hsl(60, 56%, 80%);
+  --button-fill: black;
+}
+
+body {
   display: flex;
   align-items: center;
   flex-direction: column;
   font-weight: bold;
-  background-color: beige;
- 
+  background-color: var(--background-defalut);
+  position: relative;
 }
-h1{
+
+p {
+  color: var(--text-default);
+}
+h1 {
+  color: var(--text-default);
+}
+
+h1 {
   margin: 15px;
-  font-size: 2.5REM;
+  font-size: 2.5rem;
 }
-.choices{
+.choices {
   margin: 15px;
 }
-.choices button{
-  font-size: 4REM;
+.choices button {
+  font-size: 4rem;
   cursor: pointer;
+  border: none;
   border-radius: 50%;
   background-color: rgb(168, 247, 220);
   margin-left: 5px;
-  transition: transform 0.1S ease-in-out;
-  
+  transition: transform 0.1s ease-in-out;
 }
-.resultText{
+.resultText {
   font-size: 4rem;
   margin: 15px;
 }
-.selection{
+.selection {
   font-size: 2rem;
 }
-.score .playerScore,.computerScore{
-margin: 5PX;
-font-size: 1.5rem;
+.score .playerScore,
+.computerScore {
+  margin: 5px;
+  font-size: 1.5rem;
 }
-.choices button:hover{
+/* change scale to 1.2 on hover */
+.choices button:hover {
   transform: scale(1.1);
 }
-.choices button:active{
+.choices button:active {
   transform: scale(1.2);
 }
-.redText,#computerScore{
+.redText,
+#computerScore {
   color: hsl(0, 100%, 54%);
 }
-.greenText,#playerScore{
-  color: hsl(120, 88%, 50%) ;
+.greenText,
+#playerScore {
+  color: hsl(120, 88%, 50%);
 }
-.brownText{
-  color: hsl(49, 100%, 30%) ;
+.brownText {
+  color: hsl(49, 100%, 30%);
+}
+
+.switch_Container {
+  position: absolute;
+  right: 10px;
+}
+.toggle {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--button-default);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease-in-out;
+}
+
+.toggle:hover {
+  transform: scale(1.1);
+}
+
+.toggle svg {
+  fill: var(--button-fill);
+}
+.toggle svg:first-child {
+  display: none;
+}
+.light-mode .toggle svg:last-child {
+  display: none;
+}
+.light-mode .toggle svg:first-child {
+  display: inline;
 }
