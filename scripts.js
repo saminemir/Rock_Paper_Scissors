@@ -23,11 +23,11 @@ Scissors.addEventListener("click", () => {
 
 function playGame(playerSelection) {
   const computerSelection = Choices[Math.floor(Math.random() * Choices.length)];
-  
+
   computerSelect.innerText = `Computer: ${computerSelection}`;
   playerSelect.innerText = `Player: ${playerSelection} `;
-  
-  resultText.classList.remove("greenText","redText","brownText");
+
+  resultText.classList.remove("greenText", "redText", "brownText");
 
   if (playerSelection === computerSelection) {
     resultText.innerText = "IT'S A TIE!";
@@ -48,21 +48,42 @@ function playGame(playerSelection) {
         break;
     }
   }
-  switch (resultText.innerText){
+  switch (resultText.innerText) {
     case "YOU WIN!":
       resultText.classList.add("greenText");
       player++;
-      playerScore.textContent = player ;
+      playerScore.textContent = player;
       break;
     case "YOU LOSE!":
       resultText.classList.add("redText");
       computer++;
-      computerScore.textContent = computer ;
+      computerScore.textContent = computer;
       break;
     case "IT'S A TIE!":
       resultText.classList.add("ylwText");
       break;
-
   }
-  
 }
+
+//button toggle
+
+let lightMode = localStorage.getItem("lightMode");
+const toggle = document.querySelector(".toggle");
+
+function enableLightMode() {
+  document.body.classList.add("light-mode");
+  localStorage.setItem("lightMode", "active");
+}
+
+function disableLightMode() {
+  document.body.classList.remove("light-mode");
+  localStorage.setItem("lightMode", null);
+}
+
+if (lightMode === "active") {
+  enableLightMode();
+}
+toggle.addEventListener("click", () => {
+  lightMode = localStorage.getItem("lightMode");
+  lightMode !== "active" ? enableLightMode() : disableLightMode();
+});
