@@ -28,7 +28,7 @@ Reset.addEventListener("click", () => {
   playerScore.textContent = player;
   computerScore.textContent = computer;
   resultText.classList.remove("greenText", "redText", "brownText");
-  resultText.textContent = "NEW Game!";
+  resultText.textContent = "NEW GAME!";
 });
 
 function playGame(playerSelection) {
