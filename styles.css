@@ -10,16 +10,22 @@
   --text-light: hsl(220, 15%, 20%);
   --button-light: hsl(60, 56%, 60%);
   --button-dark: hsl(220, 15%, 40%);
-  --background-defalut: hsl(220, 15%, 20%);
+  --background-default: hsl(220, 15%, 20%);
   --text-default: beige;
   --button-default: hsl(220, 15%, 30%);
   --button-fill: beige;
+
+  --reset-button-background-color: hsl(82, 39%, 27%);
+  --reset-button-text-color: beige;
 }
 .light-mode {
-  --background-defalut: beige;
+  --background-default: beige;
   --text-default: hsl(220, 15%, 20%);
   --button-default: hsl(60, 56%, 80%);
   --button-fill: black;
+
+  --reset-button-background-color: hsl(159, 86%, 75%);
+  --reset-button-text-color: black;
 }
 
 body {
@@ -27,20 +33,18 @@ body {
   align-items: center;
   flex-direction: column;
   font-weight: bold;
-  background-color: var(--background-defalut);
+  background-color: var(--background-default);
   position: relative;
 }
 
 p {
   color: var(--text-default);
 }
-h1 {
-  color: var(--text-default);
-}
 
 h1 {
-  margin: 15px;
+  margin: 5px;
   font-size: 2.5rem;
+  color: var(--text-default);
 }
 .choices {
   margin: 15px;
@@ -50,9 +54,16 @@ h1 {
   cursor: pointer;
   border: none;
   border-radius: 50%;
-  background-color: rgb(168, 247, 220);
+  background-color: hsl(159, 83%, 81%);
   margin-left: 5px;
   transition: transform 0.1s ease-in-out;
+}
+
+.previous_choices {
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .resultText {
   font-size: 4rem;
@@ -84,6 +95,29 @@ h1 {
 .brownText {
   color: hsl(49, 100%, 30%);
 }
+
+.resetButton {
+  color: var(--reset-button-text-color);
+  background-color: var(--reset-button-background-color);
+  font-weight: bold;
+
+  border: none;
+  border-radius: 7px;
+
+  aspect-ratio: 2.2/1;
+  margin-top: 5px;
+  padding: 10px 8px;
+
+  transition: transform 0.1s ease-in-out;
+}
+.resetButton:hover {
+  transform: scale(1.1);
+}
+.resetButton:active {
+  transform: scale(1.2);
+}
+
+/* theme toggle */
 
 .switch_Container {
   position: absolute;
