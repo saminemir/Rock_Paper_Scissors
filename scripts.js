@@ -7,6 +7,7 @@ const Choices = ["Rock ✊", "Paper ✋", "Scissors ✌️"];
 const resultText = document.querySelector(".resultText");
 const playerSelect = document.querySelector(".playerSelect");
 const computerSelect = document.querySelector(".computerSelect");
+const Reset = document.querySelector(".resetButton");
 
 let player = 0;
 let computer = 0;
@@ -19,6 +20,15 @@ Paper.addEventListener("click", () => {
 });
 Scissors.addEventListener("click", () => {
   playGame("Scissors ✌️");
+});
+
+Reset.addEventListener("click", () => {
+  player = 0;
+  computer = 0;
+  playerScore.textContent = player;
+  computerScore.textContent = computer;
+  resultText.classList.remove("greenText", "redText", "brownText");
+  resultText.textContent = "NEW Game!";
 });
 
 function playGame(playerSelection) {
